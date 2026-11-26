@@ -85,11 +85,17 @@ a:hover {
   text-decoration: underline;
 }
 
-a:focus,
-[tabindex="0"]:focus,
-[tabindex="-1"]:focus {
+a:focus-visible,
+[tabindex="0"]:focus-visible,
+[tabindex="-1"]:focus-visible {
   outline: 2px solid var(--color-link);
   outline-offset: 4px;
+}
+
+a:focus:not(:focus-visible),
+[tabindex="0"]:focus:not(:focus-visible),
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: none;
 }
 
 img {
